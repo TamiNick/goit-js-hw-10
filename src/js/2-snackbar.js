@@ -8,15 +8,15 @@ function submited (event) {
 event.preventDefault();
 
 const state = form.state.value;
-const delay = form.delay.value;
+const delay = +form.delay.value;
 
-
+if (delay > 0) {
 const prom = new Promise((resolve, reject) => {
     setTimeout(() => {
         if (state === "fulfilled") {
-            resolve("ok");
+            resolve("resolve");
         }else{
-            reject("neok");
+            reject("reject");
         }
         }, delay)
     })
@@ -33,6 +33,15 @@ const prom = new Promise((resolve, reject) => {
     });
     })
 form.reset();
+} else {
+    iziToast.warning({
+        message: `Please, write correct delay!`
+    })
+}
+
+
+
+
 }
 
 
