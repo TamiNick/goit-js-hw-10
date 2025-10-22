@@ -29,7 +29,7 @@ const prom = new Promise((resolve, reject) => {
     }).catch(() => {
         iziToast.error({
         message: ` Rejected promise in ${delay}ms`,
-        position: 'topRight'
+        position: 'topRight',
     });
     })
 form.reset();
