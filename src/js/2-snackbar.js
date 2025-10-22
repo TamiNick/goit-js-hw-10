@@ -24,12 +24,12 @@ const prom = new Promise((resolve, reject) => {
     .then(() => {
             iziToast.success({
             message: ` Fulfilled promise in ${delay}ms`,
-            position: 'topRight',
+            position: 'topRight'
         });
     }).catch(() => {
         iziToast.error({
         message: ` Rejected promise in ${delay}ms`,
-        position: 'topRight',
+        position: 'topRight'
     });
     })
 form.reset();
