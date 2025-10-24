@@ -14,21 +14,21 @@ if (delay > 0) {
 const prom = new Promise((resolve, reject) => {
     setTimeout(() => {
         if (state === "fulfilled") {
-            resolve("resolve");
+            resolve(`${delay}`);
         }else{
-            reject("reject");
+            reject(`${delay}`);
         }
         }, delay)
     })
     prom
-    .then(() => {
+    .then(data => {
             iziToast.success({
-            message: ` Fulfilled promise in ${delay}ms`,
+            message: ` Fulfilled promise in ${data}ms`,
             position: 'topRight'
         });
-    }).catch(() => {
+    }).catch(data => {
         iziToast.error({
-        message: ` Rejected promise in ${delay}ms`,
+        message: ` Rejected promise in ${data}ms`,
         position: 'topRight',
     });
     })
